@@ -1,0 +1,31 @@
+<h2 class="head">Login Form</h2>
+
+<!-- 
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+
+    User Id : <input type="text" formControlName="userId">
+    Password : <input type="password" formControlName="password">
+    <br>
+    <input type="submit" value="Login">
+
+</form> -->
+
+<form id="form" [formGroup]="loginForm" (ngSubmit)="login()">
+
+    <br>
+    <div class="form-group">
+      <label for="exampleInputEmail1"> Email</label>
+      <input type="text" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email Id">
+      <small id="emailHelp" class="form-text text-muted"></small>
+    </div>
+    <br>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+
+    <br><hr>
+
+    <input type="submit" class="btn btn-primary" value="Log In">
+  </form>

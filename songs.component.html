@@ -1,0 +1,61 @@
+
+<h1 class="head" style="float:left ;" >Spotify</h1>
+
+<div id="btn">
+  <button id="btn1" type="button" class="btn btn-light"><a id="atr" routerLink="" click="logOut()">Log Out</a></button>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+          <th >S.No</th>
+          <th >Song Name</th>
+          <th >Artist</th>
+          <th >Genre</th>
+          <th >Year</th>
+          <th >Playlist</th>
+        </tr>
+      </thead>
+    <tbody style="width: 50%;" *ngFor="let i of songArray">
+      <tr id="c" class="c">
+        <td id="c">{{i.songId}}</td>
+        <td id="c">{{i.songName}}</td>
+        <td id="c">{{i.artist}}</td>
+        <td id="c"> {{i.songGenre}}</td>
+        <td id="c">{{i.yearReleased}}</td>
+        <td id="c"><button (click)="addToPlaylist(i.songId)">Add</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h2 class="head" style="float:left ;" >Playlist</h2>
+  <br><br>
+  <p class="head" >{{userEmail}}</p>
+  
+
+  <table class="table">
+    <thead>
+        <tr>
+          <th >S.No</th>
+          <th >Song Name</th>
+          <th >Artist</th>
+          <th >Genre</th>
+          <th >Year</th>
+          <th >Remove</th>
+        </tr>
+      </thead>
+    <tbody style="width: 50%;" *ngFor="let j of playList">
+      <tr  class="c">
+        <td >{{j.songId}}</td>
+        <td>{{j.songName}}</td>
+        <td >{{j.artist}}</td>
+        <td > {{j.songGenre}}</td>
+        <td >{{j.yearReleased}}</td>
+        <td id="c"><button (click)="removeFromPlaylist(j.songId)">Remove</button></td>
+        <td id="c"><button (click)="playsong(j.songName)">Play</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <router-outlet></router-outlet>

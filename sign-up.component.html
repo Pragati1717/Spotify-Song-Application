@@ -1,0 +1,30 @@
+<h2 class="head">SignUp Form</h2>
+
+<!-- <form [formGroup]="registerForm" (ngSubmit)="register()">
+
+    Email Id : <input type="text" formControlName="email">
+    Password : <input type="password" formControlName="password">
+    <br>
+    <input type="submit" value="SignUp">
+
+</form> -->
+
+<form id="form" [formGroup]="registerForm" (ngSubmit)="register()">
+
+    <br>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="text" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <br>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+
+    <br><hr>
+
+    <input type="submit" class="btn btn-primary" value="signUp">
+  </form>
